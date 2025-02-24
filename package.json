@@ -1,6 +1,10 @@
 {
 	"$schema": "https://schema.kunkun.sh",
 	"name": "kunkun-ext-json",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kunkunsh/kunkun-ext-json"
+	},
 	"version": "0.0.9",
 	"license": "MIT",
 	"kunkun": {
