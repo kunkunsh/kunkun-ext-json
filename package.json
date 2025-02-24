@@ -5,7 +5,7 @@
 		"type": "git",
 		"url": "https://github.com/kunkunsh/kunkun-ext-json"
 	},
-	"version": "0.0.9",
+	"version": "0.1.0",
 	"license": "MIT",
 	"kunkun": {
 		"name": "JSON Formatter/Inspector",
@@ -16,7 +16,9 @@
 			"type": "iconify",
 			"value": "tabler:json"
 		},
-		"demoImages": [],
+		"demoImages": [
+			"https://i.imgur.com/Ez0HVfS.png"
+		],
 		"permissions": [
 			"clipboard:write-text",
 			"clipboard:read-text"

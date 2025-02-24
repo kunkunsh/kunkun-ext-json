@@ -24,9 +24,11 @@
 			right: 0.5
 		});
 		ui.hideMoveButton();
+		loadJsonFromClipboard();
 	});
 
 	$effect(() => {
+		if (!rawJson) return;
 		try {
 			jsonData = JSON.parse(rawJson);
 		} catch (error) {
