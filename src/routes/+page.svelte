@@ -5,7 +5,7 @@
 	import { Inspect } from 'svelte-inspect-value';
 
 	let rawJson = $state('');
-	let jsonData = $state({});
+	let jsonData = $state(undefined);
 
 	function loadJsonFromClipboard() {
 		clipboard.readText().then((text) => {
@@ -40,7 +40,21 @@
 <div class="h-12" data-kunkun-drag-region></div>
 <main class="container">
 	<Inspect value={jsonData} />
-	<div class="fixed bottom-5 left-0 flex w-full justify-center">
-		<Button onclick={loadJsonFromClipboard} class="w-[95vw]">Load JSON from Clipboard</Button>
+	<div class="fixed bottom-2 left-0 grid w-full grid-cols-2 justify-center gap-2 px-2">
+		<Button
+			onclick={() => {
+				clipboard
+					.writeText(JSON.stringify(jsonData, null, 2))
+					.then(() => {
+						toast.success('Copied to Clipboard');
+					})
+					.catch(() => {
+						toast.error('Failed to copy to clipboard');
+					});
+			}}
+			disabled={!jsonData}
+			class="">Copy to Clipboard</Button
+		>
+		<Button onclick={loadJsonFromClipboard} class="">Load JSON from Clipboard</Button>
 	</div>
 </main>
